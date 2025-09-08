@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Matteo - Technical Project Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 30px 0;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .header-info h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .header-info .subtitle {
+        font-size: 1.3rem;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .credentials {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .credential {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .summary-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        text-align: center;
+    }
+
+    .stat {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        padding: 20px;
+        backdrop-filter: blur(5px);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #667eea;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: 600;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .project-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+
+    .company-logo {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #667eea;
+        margin-bottom: 15px;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .project-subtitle {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .project-metrics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .metric {
+        background: rgba(102, 126, 234, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .metric-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #667eea;
+    }
+
+    .metric-label {
+        font-size: 0.8rem;
+        color: #666;
+        font-weight: 600;
+    }
+
+    .tech-highlights {
+        margin: 20px 0;
+    }
+
+    .tech-highlights h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tech-tag {
+        background: rgba(102, 126, 234, 0.2);
+        color: #667eea;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .achievements {
+        margin-top: 20px;
+    }
+
+    .achievements h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .achievement-list {
+        list-style: none;
+    }
+
+    .achievement-list li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .achievement-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #667eea;
+        font-weight: bold;
+    }
+
+    .global-impact {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .global-impact h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .global-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .global-stat {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .global-stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .global-stat-label {
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+
+    .cta-section {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 40px 0;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .header-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project-metrics {
+            grid-template-columns: 1fr;
+        }
+
+        .summary-stats {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>Jose Matteo</h1>
+                    <div class="subtitle">Senior Project Manager & Systems Engineer</div>
+                    <div class="credentials">
+                        <div class="credential">MBA</div>
+                        <div class="credential">M.S. Electrical Engineering</div>
+                        <div class="credential">Certified ScrumMaster</div>
+                        <div class="credential">Lean Six Sigma</div>
+                    </div>
+                </div>
+                <div class="summary-stats">
+                    <div class="stat">
+                        <div class="stat-number">$6M+</div>
+                        <div class="stat-label">Project Budgets Managed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Major Projects Delivered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">Avg. Performance Improvement</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+```
+<div class="container">
+    <div class="projects-grid">
+        <!-- Anton Paar Project -->
+        <div class="project-card">
+            <div class="company-logo">ANTON PAAR</div>
+            <div class="project-title">Autotap Redesign Project</div>
+            <div class="project-subtitle">Precision Lab Instrumentation | Nov 2021 - Aug 2023</div>
+            
+            <div class="project-metrics">
+                <div class="metric">
+                    <div class="metric-value">$1.45M</div>
+                    <div class="metric-label">NPV Achieved</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">6M+</div>
+                    <div class="metric-label">Tap Lifetime Testing</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">15dB</div>
+                    <div class="metric-label">Noise Reduction</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">8</div>
+                    <div class="metric-label">Thermal Sensors</div>
+                </div>
+            </div>
+
+            <div class="tech-highlights">
+                <h4>Technical Innovations</h4>
+                <div class="tech-tags">
+                    <div class="tech-tag">Thermal Management</div>
+                    <div class="tech-tag">Acoustic Engineering</div>
+                    <div class="tech-tag">HALT Testing</div>
+                    <div class="tech-tag">Requirements Traceability</div>
+                    <div class="tech-tag">Risk Management</div>
+                    <div class="tech-tag">Multi-Physics Optimization</div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h4>Key Achievements</h4>
+                <ul class="achievement-list">
+                    <li>Led cross-functional team through complex thermal engineering challenges</li>
+                    <li>Managed 47 system requirements with full V&V traceability</li>
+                    <li>Coordinated international regulatory compliance (TUV-SUD)</li>
+                    <li>Delivered on-time, on-budget with enhanced market competitiveness</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Jenoptik Project -->
+        <div class="project-card">
+            <div class="company-logo">JENOPTIK</div>
+            <div class="project-title">Traffic Safety Enforcement Deployment</div>
+            <div class="project-subtitle">Azure Cloud Infrastructure | Oct 2023 - Sep 2024</div>
+            
+            <div class="project-metrics">
+                <div class="metric">
+                    <div class="metric-value">40%</div>
+                    <div class="metric-label">Throughput Increase</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">7</div>
+                    <div class="metric-label">Team Members Led</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">15+</div>
+                    <div class="metric-label">Cities Deployed</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">2</div>
+                    <div class="metric-label">Countries (US/Colombia)</div>
+                </div>
+            </div>
+
+            <div class="tech-highlights">
+                <h4>Technical Stack</h4>
+                <div class="tech-tags">
+                    <div class="tech-tag">Azure DevOps</div>
+                    <div class="tech-tag">Agile/SCRUM</div>
+                    <div class="tech-tag">SDLC Management</div>
+                    <div class="tech-tag">CI/CD Pipelines</div>
+                    <div class="tech-tag">International Deployment</div>
+                    <div class="tech-tag">Sprint Management</div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h4>Key Achievements</h4>
+                <ul class="achievement-list">
+                    <li>Optimized backlog refinement and sprint estimation processes</li>
+                    <li>Managed large-scale deployment across North and Latin America</li>
+                    <li>Led integrated hardware and software development teams</li>
+                    <li>Streamlined release processes for seamless deployment</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Beckman Coulter Project -->
+        <div class="project-card">
+            <div class="company-logo">BECKMAN COULTER (DANAHER)</div>
+            <div class="project-title">Urinalysis Platform Upgrade</div>
+            <div class="project-subtitle">Global IVD Instrumentation | Nov 2013 - Oct 2021</div>
+            
+            <div class="project-metrics">
+                <div class="metric">
+                    <div class="metric-value">20%</div>
+                    <div class="metric-label">Service Cost Reduction</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">15%</div>
+                    <div class="metric-label">Failure Rate Reduction</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">20+</div>
+                    <div class="metric-label">Countries Deployed</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">10+</div>
+                    <div class="metric-label">Regulated Projects</div>
+                </div>
+            </div>
+
+            <div class="tech-highlights">
+                <h4>Technical Expertise</h4>
+                <div class="tech-tags">
+                    <div class="tech-tag">FDA 510(k) Compliance</div>
+                    <div class="tech-tag">CAPA Management</div>
+                    <div class="tech-tag">Power BI Analytics</div>
+                    <div class="tech-tag">Design Controls</div>
+                    <div class="tech-tag">Global Deployment</div>
+                    <div class="tech-tag">Field Reliability</div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h4>Key Achievements</h4>
+                <ul class="achievement-list">
+                    <li>Created comprehensive field reliability analytics platform</li>
+                    <li>Led regulated Phase Gate projects for global medical device markets</li>
+                    <li>Applied Lean Six Sigma methodology to reduce system failures</li>
+                    <li>Managed complex multi-region software upgrades and deployments</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Q'Straint Delta Project -->
+        <div class="project-card">
+            <div class="company-logo">Q'STRAINT</div>
+            <div class="project-title">Delta Project - Aircraft Retractor System</div>
+            <div class="project-subtitle">Aerospace Safety Hardware | Released Feb 2025</div>
+            
+            <div class="project-metrics">
+                <div class="metric">
+                    <div class="metric-value">Q-83025</div>
+                    <div class="metric-label">Aircraft Retractor Kit</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">Rev 10</div>
+                    <div class="metric-label">Final Release</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">14,000lb</div>
+                    <div class="metric-label">Load Rating</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Production Ready</div>
+                </div>
+            </div>
+
+            <div class="tech-highlights">
+                <h4>Technical Specifications</h4>
+                <div class="tech-tags">
+                    <div class="tech-tag">4130 Steel Components</div>
+                    <div class="tech-tag">FAI Documentation</div>
+                    <div class="tech-tag">AS9102 Compliance</div>
+                    <div class="tech-tag">14,000lb Webbing</div>
+                    <div class="tech-tag">Torsion Spring System</div>
+                    <div class="tech-tag">Aircraft Certification</div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h4>System Release Details</h4>
+                <ul class="achievement-list">
+                    <li>Successfully released 4-retractor aircraft restraint system</li>
+                    <li>Managed complete BOM structure and routing documentation</li>
+                    <li>Coordinated production readiness with C.O.C. requirements</li>
+                    <li>Delivered safety-critical aerospace hardware to specification</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Excellence Showcase with Real Project Images -->
+    <div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);">
+        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: #333;">Technical Excellence Showcase</h2>
+        
+        <!-- Anton Paar Thermal Analysis with Real Data -->
+        <div style="margin-bottom: 50px;">
+            <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.4rem;">Advanced Thermal Management Engineering</h3>
+            
+            <!-- Thermal Testing Results Section -->
+            <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+                <h4 style="color: #333; margin-bottom: 20px; text-align: center;">8-Point Thermal Characterization Results</h4>
+                
+                <!-- Thermal Chart Description -->
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center; margin-bottom: 25px;">
+                    <div>
+                        <p style="color: #555; font-size: 1rem; line-height: 1.6; margin-bottom: 15px;">
+                            <strong>Comprehensive thermal validation</strong> using 8 temperature sensors (A1-A7) positioned throughout the instrument. 
+                            Tests executed at 300 TPM with 100g mass in 250mL sample cylinder under 40°C ambient conditions.
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #dc3545; text-align: center;">80°C</div>
+                                <div style="font-size: 0.9rem; color: #666; text-align: center;">Motor Temperature Limit</div>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #28a745; text-align: center;">11+ Hours</div>
+                                <div style="font-size: 0.9rem; color: #666; text-align: center;">Continuous Operation</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <div style="text-align: center; color: #667eea; font-weight: 700; margin-bottom: 10px;">Test Configuration</div>
+                        <div style="font-size: 0.9rem; color: #666;">
+                            • <strong>300 TPM</strong> (Taps Per Minute)<br>
+                            • <strong>100g</strong> Sample Mass<br>
+                            • <strong>250mL</strong> Cylinder<br>
+                            • <strong>40°C</strong> Ambient<br>
+                            • <strong>NEMA 23</strong> Motor<br>
+                            • <strong>48V/4.2A</strong> Power
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Key Finding -->
+                <div style="background: rgba(40, 167, 69, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #28a745;">
+                    <strong style="color: #155724;">Key Result:</strong> 
+                    <span style="color: #155724;">Direct junction to aluminum baseplate successfully reduced motor temperature while maintaining baseplate within safe burn limits, validating the thermal management solution.</span>
+                </div>
+            </div>
+
+            <!-- Hardware Photos Description -->
+            <div style="background: rgba(102, 126, 234, 0.05); padding: 25px; border-radius: 15px;">
+                <h4 style="color: #333; margin-bottom: 15px;">Hardware Implementation</h4>
+                <p style="color: #666; margin-bottom: 15px;">
+                    Physical implementation showing sensor placement (green indicators A1-A7) and aluminum heat dissipation components. 
+                    The system includes precision tapping mechanism with integrated thermal management for continuous operation.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+                    <div style="background: white; padding: 10px; border-radius: 8px; text-align: center;">
+                        <div style="font-weight: 700; color: #667eea;">A1-A7</div>
+                        <div style="font-size: 0.8rem; color: #666;">Thermal Sensors</div>
+                    </div>
+                    <div style="background: white; padding: 10px; border-radius: 8px; text-align: center;">
+                        <div style="font-weight: 700; color: #667eea;">Al Base</div>
+                        <div style="font-size: 0.8rem; color: #666;">Heat Sink</div>
+                    </div>
+                    <div style="background: white; padding: 10px; border-radius: 8px; text-align: center;">
+                        <div style="font-weight: 700; color: #667eea;">6M+</div>
+                        <div style="font-size: 0.8rem; color: #666;">Tap Lifetime</div>
+                    </div>
+                    <div style="background: white; padding: 10px; border-radius: 8px; text-align: center;">
+                        <div style="font-weight: 700; color: #667eea;">15dB</div>
+                        <div style="font-size: 0.8rem; color: #666;">Noise Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Management Matrix -->
+        <div style="margin-bottom: 50px;">
+            <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.4rem;">Quantified Risk Management Matrix</h3>
+            
+            <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); padding: 30px; border-radius: 15px;">
+                <h4 style="color: #333; margin-bottom: 20px; text-align: center;">Functional Risks Burned-Down Through Detailed Characterization</h4>
+                
+                <!-- Risk Analysis Summary -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 25px;">
+                    <div>
+                        <h5 style="color: #333; margin-bottom: 15px;">High-Impact Risk Mitigation</h5>
+                        <div style="background: white; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                            <div style="font-weight: 700; color: #dc3545; margin-bottom: 5px;">Heat Dissipation Risk</div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="color: #666;">Severity × Probability:</span>
+                                <span style="font-weight: 700;">7 × 1</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="color: #666;">Weighted Cost Impact:</span>
+                                <span style="font-weight: 700; color: #dc3545;">$68,900</span>
+                            </div>
+                            <div style="font-size: 0.9rem; color: #666; font-style: italic;">
+                                "If instrument cannot maintain motors at 80°C when running for 8 hours at most common tap rates, concept considered inadequate."
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 style="color: #333; margin-bottom: 15px;">Mitigation Strategy Results</h5>
+                        <div style="background: rgba(40, 167, 69, 0.1); padding: 20px; border-radius: 10px;">
+                            <div style="font-weight: 700; color: #28a745; margin-bottom: 10px;">✓ Risk Successfully Mitigated</div>
+                            <ul style="color: #155724; margin: 0; padding-left: 20px;">
+                                <li>11-hour continuous testing validated</li>
+                                <li>8-point thermal characterization completed</li>
+                                <li>Aluminum baseplate solution implemented</li>
+                                <li>Temperature limits confirmed within spec</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Risk Management Process -->
+                <div style="background: white; padding: 25px; border-radius: 10px;">
+                    <h5 style="color: #333; margin-bottom: 15px; text-align: center;">Systematic Risk Assessment Process</h5>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #667eea;">40</div>
+                            <div style="font-size: 0.9rem; color: #666;">User Requirements</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #667eea;">47</div>
+                            <div style="font-size: 0.9rem; color: #666;">System Requirements</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #667eea;">86</div>
+                            <div style="font-size: 0.9rem; color: #666;">Test Cases</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #28a745;">V&V</div>
+                            <div style="font-size: 0.9rem; color: #666;">Traceability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NPV Analysis -->
+        <div style="margin-bottom: 50px;">
+            <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.4rem;">Business Impact Analysis</h3>
+            
+            <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); padding: 30px; border-radius: 15px;">
+                <h4 style="color: #333; margin-bottom: 20px; text-align: center;">NPV Analysis with Volume Sensing Module</h4>
+                
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+                    <div>
+                        <h5 style="color: #333; margin-bottom: 15px;">Project Financial Performance</h5>
+                        <div style="background: white; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; text-align: center;">
+                                <div>
+                                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">Original PO</div>
+                                    <div style="font-weight: 700; color: #667eea;">$1.144M</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">Last Review</div>
+                                    <div style="font-weight: 700; color: #667eea;">$1.367M</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">Final Achievement</div>
+                                    <div style="font-weight: 700; color: #28a745;">$1.448M</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="background: rgba(40, 167, 69, 0.1); padding: 15px; border-radius: 8px;">
+                            <strong style="color: #155724;">Result:</strong> 
+                            <span style="color: #155724;">27% NPV improvement through enhanced sales projections and successful technical execution</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="background: white; padding: 25px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #28a745; margin-bottom: 10px;">27%</div>
+                            <div style="color: #666; margin-bottom: 15px;">NPV Improvement</div>
+                            <div style="font-size: 1.3rem; font-weight: 700; color: #667eea;">$304K</div>
+                            <div style="font-size: 0.9rem; color: #666;">Value Added</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q'Straint Engineering Drawings -->
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.4rem;">Aerospace Hardware Engineering</h3>
+            
+            <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 30px; border-radius: 15px;">
+                <h4 style="color: #333; margin-bottom: 20px; text-align: center;">Q'Straint Aircraft Retractor System Release</h4>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <h5 style="color: #333; margin-bottom: 15px;">Production Release Details</h5>
+                        <div style="background: white; padding: 20px; border-radius: 10px;">
+                            <div style="margin-bottom: 15px;">
+                                <div style="font-weight: 700; color: #1976d2;">Q-83025 Kit, QRT, AIRCRAFT RETCRS (Rev. 3)</div>
+                                <div style="font-size: 0.9rem; color: #666; margin-top: 5px;">Complete 4-retractor aircraft restraint system</div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
+                                <div>• Q830007 – RH Hook Rear Rev. 10</div>
+                                <div>• Q830008 – RH Hook Front Rev. 10</div>
+                                <div>• Q830009 – LH Hook Rear Rev. 10</div>
+                                <div>• Q830010 – LH Hook Front Rev. 10</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 style="color: #333; margin-bottom: 15px;">Technical Specifications</h5>
+                        <div style="background: white; padding: 20px; border-radius: 10px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center;">
+                                <div style="border-right: 1px solid #eee; padding-right: 15px;">
+                                    <div style="font-weight: 700; color: #1976d2;">14,000 lb</div>
+                                    <div style="font-size: 0.8rem; color: #666;">Load Rating</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700; color: #1976d2;">4130 Steel</div>
+                                    <div style="font-size: 0.8rem; color: #666;">Material</div>
+                                </div>
+                                <div style="border-right: 1px solid #eee; padding-right: 15px;">
+                                    <div style="font-weight: 700; color: #1976d2;">AS9102</div>
+                                    <div style="font-size: 0.8rem; color: #666;">FAI Compliant</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700; color: #28a745;">Released</div>
+                                    <div style="font-size: 0.8rem; color: #666;">Feb 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Engineering Process -->
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <strong style="color: #333;">Complete Engineering Documentation Package</strong>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; text-align: center;">
+                        <div>
+                            <div style="font-weight: 700; color: #1976d2;">CAD</div>
+                            <div style="font-size: 0.8rem; color: #666;">3D Models</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; color: #1976d2;">BOM</div>
+                            <div style="font-size: 0.8rem; color: #666;">Bill of Materials</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; color: #1976d2;">C.O.C.</div>
+                            <div style="font-size: 0.8rem; color: #666;">Certification</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; color: #28a745;">Production</div>
+                            <div style="font-size: 0.8rem; color: #666;">Ready to Ship</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="global-impact">
+        <h2>Global Impact & Reach</h2>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">
+            Technical leadership spanning multiple industries with deployments across continents
+        </p>
+        <div class="global-stats">
+            <div class="global-stat">
+                <div class="global-stat-number">25+</div>
+                <div class="global-stat-label">Countries Reached</div>
+            </div>
+            <div class="global-stat">
+                <div class="global-stat-number">4</div>
+                <div class="global-stat-label">Industry Sectors</div>
+            </div>
+            <div class="global-stat">
+                <div class="global-stat-number">100%</div>
+                <div class="global-stat-label">On-Time Delivery</div>
+            </div>
+            <div class="global-stat">
+                <div class="global-stat-number">10+</div>
+                <div class="global-stat-label">Years Experience</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2 style="margin-bottom: 20px; color: #333;">Ready to Drive Your Next Technical Innovation?</h2>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 30px;">
+            Proven track record of delivering complex technical projects on time, on budget, with measurable business impact.
+        </p>
+        <button class="cta-button" onclick="window.print()">Download Portfolio Summary</button>
+    </div>
+</div>
+
+<script>
+    // Add smooth scrolling animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.project-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    });
+</script>
+```
+
+</body>
+</html>
