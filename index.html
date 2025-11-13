@@ -905,7 +905,23 @@
                         completed: { amount: 0.8 },
                         achievement: '20% Time-to-Market ↓',
                         color: '#f5576c'
-                    }
+                    },
+                    {
+                        name: 'Pulse Innovations Consulting',
+                        id: 'pulse',
+                        color: '#f5576c'
+                    },
+                    {
+                    name: 'Program Manager / Systems Consultant',
+                    id: 'pulse_pm',
+                    parent: 'pulse',
+                    dependency: 'qstraint_pm',
+                    start: Date.UTC(2025, 3, 1),        // Oct 2024
+                    end: today + 30 * day,             // Ongoing – 30 days past today
+                    completed: { amount: 0.95 },       // Near-complete
+                    achievement: '3x $750K Engagements | 40% Misalignment ↓',
+                    color: '#f5576c'
+                }            
                 ]
             }, {
                 name: 'Education & Certifications',
