@@ -477,7 +477,7 @@
                     <span>💼</span> LinkedIn.com/in/josematteo
                 </a>
                 <span class="contact-item">
-                    <span>📍</span> Miami, FL | Open to Relocation
+                    <span>📍</span> Longmont, Colorado
                 </span>
             </div>
 
@@ -701,6 +701,27 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- Particle Measurement Systems Project -->
+                <div class="project-card">
+                    <div class="company-name">PARTICLE MEASUREMENT SYSTEMS</div>
+                    <h3 class="project-title">Senior Project Manager</h3>
+                    <p class="project-subtitle">Precision Measurement Instrumentation | Dec 2025 - Present</p>
+
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">Ongoing</div>
+                            <div class="metric-label">Engagement</div>
+                        </div>
+                    </div>
+
+                    <div class="success-stories">
+                        <h4>Stories of Success</h4>
+                        <ul>
+                            <li>Leading project management efforts for precision particle measurement instrumentation programs</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -916,12 +937,28 @@
                     id: 'pulse_pm',
                     parent: 'pulse',
                     dependency: 'qstraint_pm',
-                    start: Date.UTC(2025, 3, 1),        // Oct 2024
-                    end: today + 30 * day,             // Ongoing – 30 days past today
-                    completed: { amount: 0.95 },       // Near-complete
+                    start: Date.UTC(2025, 3, 1),        // Apr 2025
+                    end: Date.UTC(2025, 10, 30),        // Nov 2025
+                    completed: { amount: 1 },
                     achievement: '3x $750K Engagements | 40% Misalignment ↓',
                     color: '#f5576c'
-                }            
+                },
+                    {
+                        name: 'Particle Measurement Systems',
+                        id: 'pms',
+                        color: '#43e97b'
+                    },
+                    {
+                        name: 'Senior Project Manager',
+                        id: 'pms_pm',
+                        parent: 'pms',
+                        dependency: 'pulse_pm',
+                        start: Date.UTC(2025, 11, 1),   // Dec 2025
+                        end: today + 30 * day,          // Ongoing
+                        completed: { amount: 0.5 },
+                        achievement: 'Ongoing',
+                        color: '#43e97b'
+                    }
                 ]
             }, {
                 name: 'Education & Certifications',
